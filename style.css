@@ -127,9 +127,9 @@ nav {
 	display: inline-block;
 
 }
-img:hover {
-	display: none;
-	background-image: url("homepage-graphics/a.png");
+.gallery img:hover {
+	/*display: none;
+	background-image: url("homepage-graphics/a.png");*/
 	/*width: 220px;
 	height: 220px;*/
 }
@@ -158,13 +158,19 @@ td {
 	padding-bottom: 10px;
 	line-height: 25px;
 	text-align: left;
+	padding-right: 5px;
 
 }
 tr {
 	line-height: 25px;
 
+
+
 	/*text-align: center;*/
 	/*padding-bottom: 8px;*/
 	/*margin-bottom: 10px;*/
+}
+.words {
+	line-height: 
 }
 
