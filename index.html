@@ -8,62 +8,87 @@
 </head>
 <body>
 	<header>
-	<nav>
-		<ul>
-			<li><a href="/contact">CONTACT</a></li>
-			<li><a href="/about">ABOUT</a></li>
-			<li><a href="/home">WORK</a></li>
-        </ul>
-</nav>
-<h1>Natalia Piana</h1>
-<h3 class="description">Graphics - Web - Illustrations</h3>
+	<!--
+		Pay attention to your indentation. Follow the hierarchy! Check Git diff for my corrections.
+	-->
+		<nav>
+			<ul>
+				<li><a href="/contact">CONTACT</a></li>
+				<li><a href="/about">ABOUT</a></li>
+				<li><a href="/home">WORK</a></li>
+	        </ul>
+		</nav>
 
+		<h1>Natalia Piana</h1>
+		<h3 class="description">Graphics - Web - Illustrations</h3>
+	</header>
 
-</header>
-<div class="gallery">
-	<table class="legenda">
-		<tr>
-			<td><img src="homepage-graphics/pink.png"></td><td class="words">Branding</td>
-        </tr>
-        <tr>
-			<td><img src="homepage-graphics/blue.png"></td><td class="words">Web</td>
-		</tr>
-		<tr>
-			<td><img src="homepage-graphics/green.png"></td><td class="words">Illustration</td>
-		</tr>
-		<tr>
-			<td><img src="homepage-graphics/brown.png"></td><td class="words">Typography</td>
-		</tr>
-		<tr>
-			<td><img src="homepage-graphics/yellow.png"></td><td class="words">Infographic</td>
-		</tr>
-		<tr>
-			<td><img src="homepage-graphics/black.png"></td><td class="words">Craft</td>
-		</tr>
-		
-	</table>
+	<div class="gallery">
 
-	<section class="first-row">
-	<a href="/clover valley"><img src="homepage-graphics/1.png" onmouseover="this.src='homepage-graphics/a.png'" onmouseout="this.src='homepage-graphics/1.png'"/></a>
-	<a href="/ecetera"><img src="homepage-graphics/2.png" onmouseover="this.src='homepage-graphics/b.png'" onmouseout="this.src='homepage-graphics/2.png'"/></a>
-	<a href="/organic"><img src="homepage-graphics/3.png" onmouseover="this.src='homepage-graphics/c.png'" onmouseout="this.src='homepage-graphics/3.png'"/></a>
-	<a href="/quotes"><img src="homepage-graphics/4.png" onmouseover="this.src='homepage-graphics/d.png'" onmouseout="this.src='homepage-graphics/4.png'"/></a>
-</section>
-<section class="second-row">
-	<a href="/typographic RSA"><img src="homepage-graphics/5.png" onmouseover="this.src='homepage-graphics/e.png'" onmouseout="this.src='homepage-graphics/5.png'"/></a>
-	<a href="/posters"><img src="homepage-graphics/6.png" onmouseover="this.src='homepage-graphics/f.png'" onmouseout="this.src='homepage-graphics/6.png'"/></a>
-	<a href="/inkology"><img src="homepage-graphics/7.png" onmouseover="this.src='homepage-graphics/g.png'" onmouseout="this.src='homepage-graphics/7.png'"/></a>
-	<a href="/photography"><img src="homepage-graphics/8.png" onmouseover="this.src='homepage-graphics/h.png'" onmouseout="this.src='homepage-graphics/8.png'"/></a>
-</section>
-<section class="third-row">
-	<a href="/birds"><img src="homepage-graphics/9.png" onmouseover="this.src='homepage-graphics/i.png'" onmouseout="this.src='homepage-graphics/9.png'"/></a>
-	<a href="/wotw"><img src="homepage-graphics/10.png" onmouseover="this.src='homepage-graphics/j.png'" onmouseout="this.src='homepage-graphics/10.png'"/></a>
-	<a href="/csbm"><img src="homepage-graphics/11.png" onmouseover="this.src='homepage-graphics/k.png'" onmouseout="this.src='homepage-graphics/11.png'"/></a>
-	<a href="/b&b"><img src="homepage-graphics/12.png" onmouseover="this.src='homepage-graphics/l.png'" onmouseout="this.src='homepage-graphics/12.png'"/></a>
-</section>
+<!--
+	I see why you used a table here, but I think this is better suited for a list.
+	I generally save table for very long lists, or things with more than two columns.
+	In this case, you basically only have one column (the icon is part of it).
 
+	<ul><li> here! :)
+-->
+		<table class="legenda">
+			<tr>
+				<td><img src="homepage-graphics/pink.png"></td><td class="words">Branding</td>
+	        </tr>
+	        <tr>
+				<td><img src="homepage-graphics/blue.png"></td><td class="words">Web</td>
+			</tr>
+			<tr>
+				<td><img src="homepage-graphics/green.png"></td><td class="words">Illustration</td>
+			</tr>
+			<tr>
+				<td><img src="homepage-graphics/brown.png"></td><td class="words">Typography</td>
+			</tr>
+			<tr>
+				<td><img src="homepage-graphics/yellow.png"></td><td class="words">Infographic</td>
+			</tr>
+			<tr>
+				<td><img src="homepage-graphics/black.png"></td><td class="words">Craft</td>
+			</tr>
+			
+		</table>
 
+<!--
+	NOTE 1:
+	You're using Javascript for onmouseover. That's a pretty old-fashioned method and adds overhead. Let's get rid of it. And instead try using CSS. Hint:
+
+		.piece1:hover {
+	
+		}
+
+		.piece2:hover {
+	
+		}
+
+		etc.
+
+	NOTE 2:
+	Let's wrap each of these elements in a div, or better yet <figure>. This will help us manipulate it later without having to attach classes to the <a> or <img>.
+-->
+		<section class="first-row">
+			<a href="/clover valley"><img src="homepage-graphics/1.png" onmouseover="this.src='homepage-graphics/a.png'" onmouseout="this.src='homepage-graphics/1.png'"/></a>
+			<a href="/ecetera"><img src="homepage-graphics/2.png" onmouseover="this.src='homepage-graphics/b.png'" onmouseout="this.src='homepage-graphics/2.png'"/></a>
+			<a href="/organic"><img src="homepage-graphics/3.png" onmouseover="this.src='homepage-graphics/c.png'" onmouseout="this.src='homepage-graphics/3.png'"/></a>
+			<a href="/quotes"><img src="homepage-graphics/4.png" onmouseover="this.src='homepage-graphics/d.png'" onmouseout="this.src='homepage-graphics/4.png'"/></a>
+		</section>
+		<section class="second-row">
+			<a href="/typographic RSA"><img src="homepage-graphics/5.png" onmouseover="this.src='homepage-graphics/e.png'" onmouseout="this.src='homepage-graphics/5.png'"/></a>
+			<a href="/posters"><img src="homepage-graphics/6.png" onmouseover="this.src='homepage-graphics/f.png'" onmouseout="this.src='homepage-graphics/6.png'"/></a>
+			<a href="/inkology"><img src="homepage-graphics/7.png" onmouseover="this.src='homepage-graphics/g.png'" onmouseout="this.src='homepage-graphics/7.png'"/></a>
+			<a href="/photography"><img src="homepage-graphics/8.png" onmouseover="this.src='homepage-graphics/h.png'" onmouseout="this.src='homepage-graphics/8.png'"/></a>
+		</section>
+		<section class="third-row">
+			<a href="/birds"><img src="homepage-graphics/9.png" onmouseover="this.src='homepage-graphics/i.png'" onmouseout="this.src='homepage-graphics/9.png'"/></a>
+			<a href="/wotw"><img src="homepage-graphics/10.png" onmouseover="this.src='homepage-graphics/j.png'" onmouseout="this.src='homepage-graphics/10.png'"/></a>
+			<a href="/csbm"><img src="homepage-graphics/11.png" onmouseover="this.src='homepage-graphics/k.png'" onmouseout="this.src='homepage-graphics/11.png'"/></a>
+			<a href="/b&b"><img src="homepage-graphics/12.png" onmouseover="this.src='homepage-graphics/l.png'" onmouseout="this.src='homepage-graphics/12.png'"/></a>
+		</section>
 	</div>
-
 </body>	
 </html>
